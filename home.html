@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Pages</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>College Directory</h1>
+    <ul>
+        {% for page in pages %}
+        <li>
+            <a href="/page/{{ page['_id'] }}">{{ page['header'] }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/admin">Admin Panel</a>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Admin Control Panel</h1>
+
+    <button onclick="document.getElementById('createForm').style.display='block';">New College</button>
+
+    <div id="createForm" style="display: none; margin-top: 20px;">
+        <form method="post">
+            <label>Header:</label><br>
+            <textarea name="header" required></textarea><br>
+
+            <label>Header Content:</label><br>
+            <textarea name="header_content" required></textarea><br>
+
+            <label>Vision:</label><br>
+            <textarea name="vision" required></textarea><br>
+
+            <label>Mission:</label><br>
+            <textarea name="mission" required></textarea><br>
+
+            <label>Quality Policy:</label><br>
+            <textarea name="quality_policy" required></textarea><br>
+
+            <button type="submit">Create College</button>
+        </form>
+    </div>
+
+    <h2>Existing Colleges</h2>
+    <ul>
+        {% for page in pages %}
+        <li>
+            <a href="/page/{{ page['_id'] }}">{{ page['header'] }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
